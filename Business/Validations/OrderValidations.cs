@@ -19,6 +19,8 @@ public class OrderValidations:BaseValidation
     public async Task OrderMustNotBeEmpty(Order? order)
     {
         if (order == null) throw new ValidationException("Order not found.");
+        await Task.CompletedTask;
+
     }
     public async Task CheckTransactionCount(AddOrderDto addOrderDto)
     {
@@ -27,6 +29,8 @@ public class OrderValidations:BaseValidation
           
             throw new ValidationException("Product list not be empty.");
         }
+        await Task.CompletedTask;
+
     }
     public async Task CheckProductListCount(AddOrderDto addOrderDto)
     {
@@ -35,6 +39,8 @@ public class OrderValidations:BaseValidation
             
             throw new ValidationException("Product count must not be zero. Please check product list.");
         }
+        await Task.CompletedTask;
+
     }
     public async Task CheckStock(AddOrderDto addOrderDto)
     {
